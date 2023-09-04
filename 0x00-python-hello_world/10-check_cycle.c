@@ -20,11 +20,11 @@ int check_cycle(listint_t *head)
 
 	while (tmp)
 	{
-		tmp = tmp->next;
-		if (tmp == head)
+		if (tmp->next == head)
 		{
 			return (1);
 		}
+		tmp = tmp->next;
 	}
 
 	return (0);
