@@ -13,7 +13,7 @@ int check_cycle(listint_t *head)
 	listint_t *tmp;
 
 	tmp = head;
-	while (tmp)
+	while (tmp->next)
 	{
 		if (tmp->next == head)
 		{
