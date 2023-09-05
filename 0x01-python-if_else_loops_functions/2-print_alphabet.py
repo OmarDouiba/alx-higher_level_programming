@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for alp in range(ord('a'), ord('{')):
-    print(f'{chr(alp)}', end='')
+for i in range(ord('a'), ord('{')):
+    print('{}'.format(chr(i)), end='')
