@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 for alp in range(ord('a'), ord('{')):
-    if alp != ord('q') and alp != ord('e'):
+    if alp not in [ord('q'), ord('e')]:
         print('{}'.format(chr(alp)), end='')
