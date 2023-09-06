@@ -40,4 +40,5 @@ listint_t* insert_node(listint_t **head, int number)
 			fast = fast->next;
 		}
 	}
+	return (tmp);
 }
