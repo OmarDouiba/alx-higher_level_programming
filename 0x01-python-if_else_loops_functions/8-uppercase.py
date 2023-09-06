@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-def uppercase(_str):
+def uppercase(str):
     """
     uppercase Function That transfer a given string to upper case
     @str: the given string
     """
-    st = ""
-    for c in _str:
+    _str = ""
+    for c in str:
         if ord(c) >= ord('a') and ord(c) <= ord('z'):
-            st += chr(ord(c) - 32)
+            _str += chr(ord(c) - 32)
         else:
-            st += c
-    print("{}".format(st, end=''))
+            _str += c
+    print("{}".format(_str))
