@@ -7,8 +7,7 @@ if __name__ == "__main__":
         print("{} argument.".format(argc))
     elif argc == 1:
         print("{} argument:".format(argc))
-        for i in range(1, len(sys.argv)):
-            print("{}: {}".format(i, sys.argv[i]))
+        print("{}: {}".format(1, sys.argv[1]))
     else:
         print("{} arguments:".format(argc))
         for i in range(1, len(sys.argv)):
