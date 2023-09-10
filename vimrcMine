@@ -1,4 +1,4 @@
-" set tabstop andi shiftwidth to 8 spaces
+" Set tabstop and shiftwidth to 8 spaces
 set tabstop=8
 set shiftwidth=8
 
@@ -9,7 +9,7 @@ set noexpandtab
 set colorcolumn=81
 
 " Show existing tabs as '→' and trailing whitespace as '·'
-set list listchars=tab:	\ ,trail:·
+set list listchars=tab:\u2192\ ,trail:\u00B7
 
 " Disable automatic indentation based on file type for shell scripts
 autocmd FileType sh set noautoindent
@@ -28,3 +28,4 @@ set smartcase
 set number
 set showcmd
 set cursorline
+
