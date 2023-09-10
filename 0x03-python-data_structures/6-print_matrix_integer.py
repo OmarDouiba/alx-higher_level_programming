@@ -1,13 +1,5 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-#    if matrix == [[]]:
-#        print()
-#    for row in matrix:
-#        ln = len(row)
-#        for num in row[:ln - 1]:
-#            print("{:d}".format(num), end=' ')
-#        print("{:d}".format(row[-1]), end='')
-#        print()
     if matrix == [[]]:
         print()
     row = len(matrix)
@@ -18,3 +10,10 @@ def print_matrix_integer(matrix=[[]]):
                 print("{:d}".format(matrix[i][j]), end=' ')
             else:
                 print("{:d}".format(matrix[i][j]))
+#        print()
+#    for row in matrix:
+#        ln = len(row)
+#        for num in row[:ln - 1]:
+#            print("{:d}".format(num), end=' ')
+#        print("{:d}".format(row[-1]), end='')
+#        print()
