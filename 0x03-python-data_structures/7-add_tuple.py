@@ -2,9 +2,9 @@
 def add_tuple(tuple_a=(), tuple_b=()) -> tuple:
     len_a, len_b = len(tuple_a), len(tuple_b)
     if len_a < 2:
-        tuple_a += (0, ) * len_b
+        tuple_a += (0, ) * len_a
     elif len_b < 2:
-        tuple_b += (0, ) * len_a
+        tuple_b += (0, ) * len_b
     add = (tuple_a[0] + tuple_b[0], tuple_a[1] + tuple_b[1])
     return add
 #    len_a, len_b = len(tuple_a), len(tuple_b)
