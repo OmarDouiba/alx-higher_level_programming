@@ -7,6 +7,4 @@ def max_integer(my_list: list) -> int:
         for i in my_list:
             if i > num:
                 num = i
-            else:
-                num
     return num
