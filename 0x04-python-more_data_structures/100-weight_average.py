@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def weight_average(my_list=[]):
     som, div = 0, 0
     for i in my_list[:]:
