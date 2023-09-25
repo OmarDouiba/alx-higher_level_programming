@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
     try:
-        if int(value) is not str:
-            print("{}".format(value))
-            return True
+        print("{}".format(int(value)))
+        return True
     except (ValueError):
         return False
