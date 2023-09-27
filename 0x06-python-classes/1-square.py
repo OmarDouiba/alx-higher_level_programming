@@ -13,8 +13,3 @@ class Square:
             size: the size of Square
         """
         self.__size = size
-        # if type(self.__size) is not int:
-        if not isinstance(self.__size, int):
-            raise Exception("size must be an integer")
-        elif self.__size < 0:
-            raise Exception("size must be >= 0")
