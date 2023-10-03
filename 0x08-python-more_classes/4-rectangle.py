@@ -17,6 +17,7 @@ class Rectangle:
         area(self): Calculates and returns the area of the rectangle.
         perimeter(self): Calculates and returns the perimeter of the rectangle.
         __str__(self): Custom string representation of the rectangle.
+        __repr__(self): Custom representation of the rectangle for debugging.
     """
     def __init__(self, width: int = 0, height: int = 0) -> None:
         """
@@ -101,3 +102,12 @@ class Rectangle:
             if i < self.__height - 1:
                 ptr += "\n"
         return ptr
+
+    def __repr__(self):
+        """
+        Custom representation of the rectangle for debugging.
+
+        Returns:
+            str: A string representation of the rectangle.
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
