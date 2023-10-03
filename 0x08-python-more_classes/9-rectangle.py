@@ -26,6 +26,7 @@ class Rectangle:
         __del__(self): Destructor method to clean up instances.
         bigger_or_equal(rect_1, rect_2): Static method to compare two
         rectangles and return the larger one.
+        square(cls, size=0): Class method to create a square instance.
     """
 
     number_of_instances = 0
