@@ -8,6 +8,11 @@ class Rectangle:
     """
     A class to represent Rectangle
 
+    Attributes:
+        number_of_instances (int): Keeps track of the number of
+        Rectangle instances created.
+        print_symbol (str): The symbol used for printing the rectangle.
+
     Methods:
         __init__(self, width=0, height=0): Initializes a new Rectangle instance
         width (property): Getter method for the width attribute
