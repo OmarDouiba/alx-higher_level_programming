@@ -100,12 +100,3 @@ class Rectangle:
             if i < self.__height - 1:
                 ptr += "\n"
         return ptr
-
-    def __repr__(self):
-        """
-        Custom representation of the rectangle for debugging.
-
-        Returns:
-            str: A string representation of the rectangle.
-        """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
