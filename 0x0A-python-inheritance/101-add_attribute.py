@@ -9,3 +9,8 @@ def add_attribute(obj, name, value):
             setattr(obj, name, value)
             return
     raise TypeError("can't add new attribute")
+
+    # try:
+    #     self.name = value
+    # except:
+    #     raise TypeError("can't add new attribute")
