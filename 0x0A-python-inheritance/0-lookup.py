@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+lookup module
+"""
+
+
 def lookup(obj):
     """
     function that returns the list of
