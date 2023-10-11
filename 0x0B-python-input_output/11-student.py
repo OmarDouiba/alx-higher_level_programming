@@ -31,7 +31,7 @@ class Student:
         """
         dic = {}
 
-        if attrs == None:
+        if attrs is None:
             return self.__dict__
 
         for name in attrs[:]:
