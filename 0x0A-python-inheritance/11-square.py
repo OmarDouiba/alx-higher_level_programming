@@ -13,15 +13,14 @@ class Square(Rectangle):
     """
     def __init__(self, size):
         """Constructor."""
-        self.__width = size
-        self.__height = size
-        super().integer_validator("width", self.__width)
-        super().integer_validator("height", self.__height)
+        self.__size = size
+        super().integer_validator("size", self.__size)
+        super().__init__(self.__size, self.__size)
 
     def area(self):
         """Clc the area."""
-        return self.__width * self.__height
+        return self.__size * self.__size
 
     def __str__(self):
         """Print the string format of Square."""
-        return "[Square] {}/{}".format(self.__width, self.__height)
+        return "[Square] {}/{}".format(self.__size, self.__size)
