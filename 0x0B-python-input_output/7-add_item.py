@@ -11,11 +11,12 @@ def add_item():
 
     if os.path.exists("./add_item.json"):
         li = load_from_json_file("add_item.json")
-        for arg in sys.argv[1:]:
-            li.append(arg)
-        save_to_json_file(li, "add_item.json")
     else:
         li = []
+
+    for arg in sys.argv[1:]:
+        li.append(arg)
+
     save_to_json_file(li, "add_item.json")
 
 
