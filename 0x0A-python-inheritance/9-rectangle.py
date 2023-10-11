@@ -14,8 +14,10 @@ class Rectangle(BaseGeometry):
         __str__: Print the string format of Rectangle.
     """
     def __init__(self, width, height):
-        self.__width = super().integer_validator("width", width)
-        self.__height = super().integer_validator("height", height)
+        self.__width = width
+        super().integer_validator("width", self.__width)
+        self.__height = height
+        super().integer_validator("height", self.__height)
 
     def area(self):
         """Clc the area."""
