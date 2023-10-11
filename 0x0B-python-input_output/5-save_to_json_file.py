@@ -8,4 +8,5 @@ def save_to_json_file(my_obj, filename):
     using a JSON representation."""
 
     with open(filename, "w") as s_json:
-        s_json.write(json.dumps(my_obj))
+        json.dump(my_obj, filename, indent=4)
+        # s_json.write(json.dumps(my_obj))
