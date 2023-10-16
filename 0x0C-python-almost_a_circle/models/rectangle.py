@@ -103,13 +103,11 @@ class Rectangle(Base):
 
     def display(self):
         """print #"""
-        if self.__y > 0:
-            for y in range(self.__y):
-                print("")
+        for y in range(self.__y):
+            print("")
         for col in range(self.__height):
-            if self.__x > 0:
-                for x in range(self.__x):
-                    print(end="")
+            for j in range(self.__x):
+                print(end="")
             for row in range(self.__width):
                 print("#", end="")
             print()
