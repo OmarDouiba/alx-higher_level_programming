@@ -105,7 +105,7 @@ class Rectangle(Base):
         """print #"""
         str_s = ""
         if self.width is 0 or self.height is 0:
-            str_s = ''
+            str_s = ""
         else:
             for j in range(self.y):
                 str_s += '\n'
