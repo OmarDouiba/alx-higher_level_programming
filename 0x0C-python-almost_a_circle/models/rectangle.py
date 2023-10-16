@@ -114,7 +114,7 @@ class Rectangle(Base):
                     str_s += ' '
                 for row in range(self.width):
                     str_s += '#'
-                if j is not (self.height - 1):
+                if col is not (self.height - 1):
                     str_s += '\n'
         print(str_s)
 
