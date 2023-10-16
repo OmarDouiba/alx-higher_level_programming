@@ -93,6 +93,7 @@ class Rectangle(Base):
         """Setter y"""
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format("y"))
+
         elif value < 0:
             raise ValueError("{} must be >= 0".format("y"))
         self.__y = value
