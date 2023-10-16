@@ -102,21 +102,21 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-    """print #"""
-    str_s = ""
-    if self.width is 0 or self.height is 0:
+        """print #"""
         str_s = ""
-    else:
-        for j in range(self.y):
-            str_s += '\n'
-        for col in range(self.height):
-            for i in range(self.x):
-                str_s += ' '
-            for row in range(self.width):
-                str_s += '#'
-            if j is not (self.height - 1):
+        if self.width is 0 or self.height is 0:
+            str_s = ""
+        else:
+            for j in range(self.y):
                 str_s += '\n'
-    print(str_s)
+            for col in range(self.height):
+                for i in range(self.x):
+                    str_s += ' '
+                for row in range(self.width):
+                    str_s += '#'
+                if j is not (self.height - 1):
+                    str_s += '\n'
+        print(str_s)
 
     def __str__(self):
         """Str method"""
