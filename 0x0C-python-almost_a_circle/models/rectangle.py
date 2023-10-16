@@ -100,39 +100,3 @@ class Rectangle(Base):
     def area(self):
         """Area"""
         return self.__width * self.__height
-
-    def display(self):
-        """print #"""
-        if self.__y > 0:
-            for y in range(self.__y):
-                print("")
-        for col in range(self.__height):
-            if self.__x > 0:
-                    for x in range(self.__x):
-                        print(end="")
-            for row in range(self.__width):
-                print("#", end="")
-            print()
-
-    def __str__(self):
-        """Str method"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
-                                                       self.__y, self.__width,
-                                                       self.__height)
-
-    def update(self, *args, **kwargs):
-        """update attributes"""
-        up_list = ["id", "width", "height", "x", "y"]
-
-        if args is not None:
-            for up_list, arg in zip(up_list, args):
-                setattr(self, up_list, arg)
-
-        if kwargs is not None:
-            for kwarg, val in kwargs.items():
-                setattr(self, kwarg, val)
-
-    def to_dictionary(self):
-        """Method that returns the dictionary"""
-        return {"x": self.__x, "y": self.__y, "id": self.id,
-                "height": self.__height, "width": self.__width}
