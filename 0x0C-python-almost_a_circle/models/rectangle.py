@@ -103,6 +103,8 @@ class Rectangle(Base):
 
     def display(self):
         """print #"""
+        if self.__width is 0 or self.height is 0:
+            print("")
         for y in range(self.__y):
             print("")
         for col in range(self.__height):
