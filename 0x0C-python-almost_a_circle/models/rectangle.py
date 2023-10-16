@@ -108,8 +108,8 @@ class Rectangle(Base):
                 print("")
         for col in range(self.__height):
             if self.__x > 0:
-                    for x in range(self.__x):
-                        print(end="")
+                for x in range(self.__x):
+                    print(end="")
             for row in range(self.__width):
                 print("#", end="")
             print()
