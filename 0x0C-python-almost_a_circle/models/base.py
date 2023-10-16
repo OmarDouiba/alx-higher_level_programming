@@ -17,7 +17,8 @@ class Base:
     Methods:
         __init__(self, id): Constructor
         to_json_string(list_dictionaries): returns the JSON
-        string representation
+        string representation.
+        save_to_file(cls, list_objs): save a list of objects to a JSON file.
     """
 
     __nb_objects = 0
@@ -43,7 +44,11 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """Save a list of objects to a JSON file."""
+        obj = [obj.to_dictionary() for obj in list_objs]
+
+        if list_objs is None:
+            obj = "[]"
+
         with open("{}.json".format(cls.__name__), "w") as f:
-            if list_objs is None:
-                json.load(f, [])
-            json.load(f, cls.to_json_string(list_objs))
+            f.write(cls.to_json_string(obj))
