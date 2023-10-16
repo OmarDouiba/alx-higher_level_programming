@@ -105,17 +105,17 @@ class Rectangle(Base):
         """print #"""
         str_s = ""
         if self.width is 0 or self.height is 0:
-            str_s = ""
+            str_s = ''
         else:
             for j in range(self.y):
-                str_s += "\n"
+                str_s += '\n'
             for col in range(self.height):
                 for i in range(self.x):
-                    str_s += " "
+                    str_s += ' '
                 for row in range(self.width):
-                    str_s += "#"
-                if col < self.height:
-                    str_s += "\n"
+                    str_s += '#'
+                if col <= self.height - 1:
+                    str_s += '\n'
         print(str_s)
 
     def __str__(self):
