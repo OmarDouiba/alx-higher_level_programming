@@ -7,11 +7,34 @@ from models.base import Base
 
 class Rectangle(Base):
     """
-    Define the Rectangle class as a subclass of Base
+    Class Rectanhle That inherit from Bass
+
+    Attributs:
+        id: constructor attribut that iherit from the base class.
+        width: the width of Rectangle.
+        height: the height of Rectangle.
+        x: x.
+        y: y.
+
+    Methods:
+        __init___init__(self, width, height, x=0, y=0, id=None): Constructor.
+        width(self): getter.
+        width(self, value): setter.
+        height(self): getter.
+        height(self, value): setter.
+        x(self): getter.
+        x(self, value): setter.
+        y(self): getter.
+        y(self, value): getter.
+        area(self): clc the area of Rectangle.
+        display(self): method that print #.
+        __str__(self): str method.
+        update(self, *args): update attributes
+        to_dictionary(self): Method that returns the dictionary
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """initializes variables and methods"""
+        """Constructor"""
         self.width = width
         self.height = height
         self.x = x
@@ -20,130 +43,56 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """
-        getter for width, retrieves width value
-        """
+        """Getter width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """
-        setter for width, validates the value assignment for width
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format("width"))
-        if value <= 0:
-            raise ValueError("{} must be > 0".format("width"))
+        """Setter width"""
+        if not isinstance(value, int):
+            raise TypeError("Width must be an integer")
+        elif value <= 0:
+            raise ValueError("Width must be > 0")
         self.__width = value
-#        print("width is setup: {}".format(value))
 
     @property
     def height(self):
-        """
-        getter for height, retrieves height value
-        """
+        """Getter height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-        setter for height, validates the value assignment for height
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format("height"))
-        if value <= 0:
-            raise ValueError("{} must be > 0".format("height"))
+        """Setter height"""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
-#        print("height is setup: {}".format(value))
 
     @property
     def x(self):
-        """
-        getter for x, retrieves x value
-        """
+        """Getter x"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """
-        setter for x, validates the value assignment for x
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format("x"))
-        if value < 0:
-            raise ValueError("{} must be >= 0".format("x"))
+        """Setter x"""
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        elif value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
     def y(self):
-        """
-        getter for y, retrieves y value
-        """
+        """Getter y"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """
-        setter for y, validates the value assignment for y
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format("y"))
-        if value < 0:
-            raise ValueError("{} must be >= 0".format("y"))
+        """Setter y"""
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        elif value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
-
-    def area(self):
-        """
-        function that returns the area value of the Rectangle instance
-        (from class.function call)
-        """
-        return self.width * self.height
-
-    def display(self):
-        """
-        define display method for printing a rectangle
-        (from class.function call)
-        """
-        pattern = ""
-        if self.width is 0 or self.height is 0:
-            print(pattern)
-        else:
-            for k in range(self.y):
-                pattern += '\n'
-            for j in range(self.height):
-                for l in range(self.x):
-                    pattern += ' '
-                for i in range(self.width):
-                    pattern += '#'
-                if j is not (self.height - 1):
-                    pattern += '\n'
-            print(pattern)
-
-    def __str__(self):
-        """
-        define special __str__ method for printing a rectangle
-        (from instance call)
-        """
-        return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id,
-                                                       self.x, self.y,
-                                                       self.width, self.height)
-
-    def update(self, *args, **kwargs):
-        """
-        function that assigns an argument to each attribute
-        """
-        a_list = ["id", "width", "height", "x", "y"]
-        if args is not None and len(args) > 0 and len(args) <= 5:
-            for i, arg in enumerate(args):
-                setattr(self, a_list[i], arg)
-        if kwargs is not None and len(kwargs) > 0 and len(kwargs) <= 5:
-            for name, value in kwargs.items():
-                setattr(self, name, value)
-
-    def to_dictionary(self):
-        """
-        function that returns the dictionary representation of a Rectangle
-        object/instance
-        """
-        return {"id": self.id, "width": self.width, "height": self.height,
-                "x": self.x, "y": self.y}
