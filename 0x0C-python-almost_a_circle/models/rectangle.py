@@ -113,7 +113,8 @@ class Rectangle(Base):
                     print(end="")
                 for row in range(self.__width):
                     print("#", end="")
-                print()
+                if col is not (self.height - 1):
+                    print()
 
     def __str__(self):
         """Str method"""
