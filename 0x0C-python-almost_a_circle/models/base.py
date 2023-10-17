@@ -57,4 +57,4 @@ class Base:
         if json_string is None or json_string == 0:
             return []
         else:
-            return json.load(json_string)
+            return json.loads(json_string)
