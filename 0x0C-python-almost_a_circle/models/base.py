@@ -51,3 +51,10 @@ class Base:
             else:
                 f.write(cls.to_json_string(
                             [obj.to_dictionary() for obj in list_objs]))
+
+    def from_json_string(json_string):
+        """method that returns the list of the JSON string representation"""
+        if json_string is None or json_string == 0:
+            return []
+        else:
+            return json.load(json_string)
