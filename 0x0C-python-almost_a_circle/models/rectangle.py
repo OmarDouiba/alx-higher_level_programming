@@ -104,7 +104,7 @@ class Rectangle(Base):
     def display(self):
         """print #"""
         str_s = ""
-        if self.width is 0 or self.height is 0:
+        if self.width == 0 or self.height == 0:
             str_s = ""
         else:
             for j in range(self.y):
