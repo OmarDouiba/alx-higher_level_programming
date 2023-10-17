@@ -47,8 +47,7 @@ class Base:
         """Save a list of objects to a JSON file."""
         with open("{}.json".format(cls.__name__), "w") as f:
             if list_objs is None:
-                json.dump(list_objs, f)
+                f.write("[]")
             else:
-                json.dump(
-                        cls.to_json_string(
-                            [obj.to_dictionary() for obj in list_objs]), f)
+                f.write(cls.to_json_string(
+                            [obj.to_dictionary() for obj in list_objs]))
