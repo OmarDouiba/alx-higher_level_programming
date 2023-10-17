@@ -49,4 +49,6 @@ class Base:
             if list_objs is None:
                 json.dump([], f)
             else:
-                json.dump(cls.to_json_string([obj.to_dictionary() for obj in list_objs]), f)
+                json.dump(
+                        cls.to_json_string(
+                            [obj.to_dictionary() for obj in list_objs]), f)
