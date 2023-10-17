@@ -65,4 +65,6 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Method  that returns an instance with all attributes already set"""
-        cls.update(None, dictionary)
+        ins = cls(0)
+        ins.update(**dictionary)
+        return ins
