@@ -3,4 +3,4 @@ SELECT `states`.`id`, `cities`.`name`
 FROM `states`, `cities`
 WHERE `states`.`id`=`cities`.`id`
 AND `states`.`name`='California'
-ORDER BY `cities`.`id`;
+ORDER BY `cities`.`id` ASC;
