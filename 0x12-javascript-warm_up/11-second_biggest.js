@@ -8,13 +8,13 @@ function secondBiggest (listOfNumbers) {
     arr.push(parseInt(listOfNumbers[i]));
   }
   const maxNum = Math.max(...arr);
-  rem = arr.indexOf(maxNum)
-  arr.splice(rem, 1)
+  rem = arr.indexOf(maxNum);
+  arr.splice(rem, 1);
   if (listOfNumbers.length <= 1) {
     console.log(0);
+  } else {
+    console.log(Math.max(...arr));
   }
-  
-  console.log(Math.max(...arr));
 }
 
 secondBiggest(argv);
