@@ -2,7 +2,7 @@
 
 const argv = process.argv.slice(2);
 
-function secondBiggest(listOfNumbers) {
+function secondBiggest (listOfNumbers) {
   if (listOfNumbers <= 1 || isNaN(listOfNumbers)) {
     console.log(1);
   } else {
