@@ -3,7 +3,7 @@
 const argv = process.argv.slice(2);
 
 function secondBiggest (listOfNumbers) {
-  if (listOfNumbers <= 1 || isNaN(listOfNumbers)) {
+  if (listOfNumbers.length <= 1 ) {
     console.log(1);
   } else {
     console.log(parseInt(listOfNumbers));
