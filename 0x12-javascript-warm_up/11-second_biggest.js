@@ -6,7 +6,6 @@ function secondBiggest (listOfNumbers) {
   if (listOfNumbers.length <= 1 ) {
     console.log(1);
   } else {
-    
   }
 }
 
