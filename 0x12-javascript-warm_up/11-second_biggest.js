@@ -5,19 +5,16 @@ const argv = process.argv.slice(2);
 function secondBiggest (listOfNumbers) {
   const arr = [];
   for (let i = 0; i < listOfNumbers.length; i++) {
-    if (isNaN(parseInt(listOfNumbers[i]))) {
-      console.log(0);
-    }
     arr.push(parseInt(listOfNumbers[i]));
   }
-  console.log(arr);
+  const maxNum = Math.max(...arr);
+  rem = arr.indexOf(maxNum)
+  arr.splice(rem, 1)
   if (listOfNumbers.length <= 1) {
     console.log(0);
-  } else {
-
   }
-  const maxNum = Math.max(arr);
-  console.log(maxNum);
+  
+  console.log(Math.max(...arr));
 }
 
 secondBiggest(argv);
