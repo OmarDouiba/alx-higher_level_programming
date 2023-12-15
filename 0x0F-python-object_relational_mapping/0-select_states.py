@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-from mysql.connector import connect
+import MySQLdb
 from sys import argv
 
 
 try:
-    with connect(
+    with MySQLdb.connect(
         host="localhost",
         port=3306,
         user=argv[1],
@@ -13,6 +13,7 @@ try:
     ) as connection:
         select_all = """
         SELECT * FROM states
+        ORDER BY states.id ASC
         LIMIT 5
         """
         with connection.cursor() as cursor:
