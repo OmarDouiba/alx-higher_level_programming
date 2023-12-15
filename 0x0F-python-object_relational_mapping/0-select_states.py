@@ -13,6 +13,7 @@ try:
     ) as connection:
         select_all = """
         SELECT * FROM states
+        LIMIT 5
         """
         with connection.cursor() as cursor:
             cursor.execute(select_all)
