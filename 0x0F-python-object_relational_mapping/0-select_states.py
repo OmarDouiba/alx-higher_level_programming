@@ -17,7 +17,7 @@ if __name__ == "__main__":
         ) as connection:
             select_all = """
             SELECT * FROM states
-            ORDER BY states.id ASC
+            ORDER BY id ASC
             """
             with connection.cursor() as cursor:
                 cursor.execute(select_all)
