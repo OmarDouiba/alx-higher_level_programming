@@ -18,7 +18,6 @@ if __name__ == "__main__":
             select_all = """
             SELECT * FROM states
             ORDER BY states.id ASC
-            LIMIT 5
             """
             with connection.cursor() as cursor:
                 cursor.execute(select_all)
