@@ -16,7 +16,7 @@ if __name__ == "__main__":
     )
     select_data = """
     SELECT * FROM states
-    WHERE name LIKE "N%"
+    WHERE name LIKE 'N%'
     ORDER BY id ASC
     """
     cursor = connection.cursor()
