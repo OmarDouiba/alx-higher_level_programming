@@ -20,7 +20,6 @@ if __name__ == "__main__":
     WHERE name LIKE "N%"
     ORDER BY id ASC
     """
-
     cursor = connection.cursor()
     cursor.execute(select_data)
     data = cursor.fetchall()
