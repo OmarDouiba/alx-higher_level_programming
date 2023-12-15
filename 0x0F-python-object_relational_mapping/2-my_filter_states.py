@@ -26,7 +26,8 @@ if __name__ == "__main__":
     res = cursor.fetchall()
 
     for row in res:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
 
     cursor.close()
     connection.close()
