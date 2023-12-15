@@ -16,6 +16,7 @@ if __name__ == "__main__":
     )
     select_data = """
     SELECT * FROM states
+    WHERE BINARY name LIKE 'N%'
     ORDER BY id ASC
     """
     cursor = connection.cursor()
@@ -23,7 +24,6 @@ if __name__ == "__main__":
     data = cursor.fetchall()
 
     for row in data:
-        if row[1][0] == 'N':
-            print(row)
+        print(row)
     cursor.close()
     connection.close()
