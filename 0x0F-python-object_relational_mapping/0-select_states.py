@@ -24,5 +24,7 @@ if __name__ == "__main__":
                 resualt = cursor.fetchall()
                 for row in resualt:
                     print(row)
+                cursor.close()
+                connection.close()
     except Exception as e:
         print(e)
