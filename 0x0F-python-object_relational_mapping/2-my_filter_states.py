@@ -27,6 +27,6 @@ if __name__ == "__main__":
 
     for row in res:
         print(row)
-    
+
     cursor.close()
     connection.close()
