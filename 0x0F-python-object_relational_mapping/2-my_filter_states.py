@@ -17,7 +17,7 @@ if __name__ == "__main__":
     )
     select_db = """
     SELECT * FROM states
-    WHERE name='{:s}'
+    WHERE BINARY name='{:s}'
     ORDER BY id ASC
     """.format(argv[4])
 
@@ -26,8 +26,7 @@ if __name__ == "__main__":
     res = cursor.fetchall()
 
     for row in res:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
 
     cursor.close()
     connection.close()

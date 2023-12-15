@@ -14,6 +14,7 @@ if __name__ == "__main__":
         password=argv[2],
         database=argv[3]
     )
+    # BINARY used for case-sensitive
     select_data = """
     SELECT * FROM states
     WHERE BINARY name LIKE 'N%'
