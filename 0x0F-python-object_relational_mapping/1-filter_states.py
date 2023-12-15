@@ -24,6 +24,7 @@ if __name__ == "__main__":
     data = cursor.fetchall()
 
     for row in data:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
     cursor.close()
     connection.close()
