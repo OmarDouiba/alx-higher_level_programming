@@ -14,7 +14,6 @@ if __name__ == "__main__":
         password=argv[2],
         database=argv[3]
     )
-
     select_data = """
     SELECT * FROM states
     WHERE name LIKE "N%"
