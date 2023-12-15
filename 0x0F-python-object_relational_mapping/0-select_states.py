@@ -17,14 +17,14 @@ if __name__ == "__main__":
         ) as connection:
             select_all = """
             SELECT * FROM states
-            ORDER BY id ASC
+            ORDER BY states.id ASC
             """
             with connection.cursor() as cursor:
                 cursor.execute(select_all)
                 resualt = cursor.fetchall()
                 for row in resualt:
                     print(row)
-        cursor.close()
-        connection.close()
+            cursor.close()
+            connection.close()
     except Exception as e:
         print(e)
