@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-import MySQLdb
-from sys import argv
+"""
+script that lists all states from the database hbtn_0e_0_usa.
+"""
 
 if __name__ == "__main__":
+    import MySQLdb
+    from sys import argv
+    
     try:
         with MySQLdb.connect(
             host="localhost",
