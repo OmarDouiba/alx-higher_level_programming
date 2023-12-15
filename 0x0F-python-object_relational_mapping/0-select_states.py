@@ -6,7 +6,7 @@ script that lists all states from the database hbtn_0e_0_usa.
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
-    
+
     connection = MySQLdb.connect(
             host="localhost",
             port=3306,
@@ -25,4 +25,3 @@ if __name__ == "__main__":
         print(row)
     cursor.close()
     connection.close()
-
