@@ -17,7 +17,7 @@ if __name__ == "__main__":
     )
     select_db = """
     SELECT * FROM states
-    WHERE name='{:s}'
+    WHERE BINARY name='{:s}'
     ORDER BY id ASC
     """.format(argv[4])
 
