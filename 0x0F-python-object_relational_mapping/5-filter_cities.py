@@ -27,13 +27,24 @@ if __name__ == "__main__":
     cursor.execute(query, (argv[4],))
     res = cursor.fetchall()
 
-    i = len(res)
-    for row in res:
-        for name in row:
-            print(name, end="")
-            if i - 1 != 0:
-                print(end=", ")
-            i -= 1
-    print()
+    list_names = [row[0] for row in res]
+    print(", ".join(list_names))
+
+    # OR 2nd way
+    # list_names = []
+    # for row in res:
+    #     list_names.append(row[0])
+    # print(", ".join(list_names))
+
+    # OR 3nd way
+    # i = len(res)
+    # for row in res:
+    #     for name in row:
+    #         print(", ".join(name), end="")
+    #         if i - 1 != 0:
+    #             print(end=", ")
+    #         i -= 1
+    # print()
+
     cursor.close()
     connection.close()
