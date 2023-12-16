@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     res = cursor.fetchall()
     for row in res:
-        print(res)
+        print(row)
 
     cursor.close()
     connection.close()
