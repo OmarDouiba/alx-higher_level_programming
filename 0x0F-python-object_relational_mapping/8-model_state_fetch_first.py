@@ -7,6 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
+
 if __name__ == "__main__":
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
@@ -24,8 +25,7 @@ if __name__ == "__main__":
     if not query:
         print("Nothing")
     else:
-        query = session.query(State).order_by(State.id).limit(1)
-        for row in query:
-            print("{}: {}".format(row.id, row.name))
+        query = session.query(State).order_by(State.id).first()
+        print("{}: {}".format(query.id, query.name))
     Base.metadata.create_all(engine)
     session.close()
