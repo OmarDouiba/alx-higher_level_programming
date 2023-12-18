@@ -21,7 +21,7 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State).order_by(State.id).limit(1)
-
+    print(query)
     if query is None:
         print("Nothing")
     else:
