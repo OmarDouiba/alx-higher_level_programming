@@ -26,3 +26,4 @@ if __name__ == "__main__":
     for row in data:
         print("{}: {}".format(row.id, row.name))
     Base.metadata.create_all(engine)
+    session.close()
