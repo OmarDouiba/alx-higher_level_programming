@@ -21,11 +21,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State).count()
-    if not query:
-        print("Nothing")
-    else:
+    try:
         query = session.query(State).order_by(State.id).first()
         print("{}: {}".format(query.id, query.name))
+    except:
+        print("Nothing")
+
     Base.metadata.create_all(engine)
     session.close()
