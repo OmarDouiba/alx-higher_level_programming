@@ -2,7 +2,6 @@
 """
 script that lists all State objects from the database hbtn_0e_6_usa
 """
-
 from sys import argv
 from model_state import State, Base
 from sqlalchemy import create_engine
@@ -27,4 +26,3 @@ if __name__ == "__main__":
     for row in data:
         print("{}: {}".format(row.id, row.name))
     session.close()
-
