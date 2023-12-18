@@ -21,8 +21,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = session.query(State).all()
+    data = session.query(State).order_by(State.id)
 
     for row in data:
         print("{}: {}".format(row.id, row.name))
-    session.close()
+    Base.metadata.create_all(engine)
