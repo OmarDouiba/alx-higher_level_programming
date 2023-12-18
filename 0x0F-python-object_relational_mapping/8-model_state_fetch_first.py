@@ -23,9 +23,12 @@ if __name__ == "__main__":
 
     try:
         query = session.query(State).order_by(State.id).first()
-        print("{}: {}".format(query.id, query.name))
-    except:
-        print("Nothing")
+        if query:
+            print("{}: {}".format(query.id, query.name))
+        else:
+            print("Nothing")
+    except Exception as e:
+        print("{}".format(e))
 
     Base.metadata.create_all(engine)
     session.close()
