@@ -23,7 +23,8 @@ if __name__ == "__main__":
     session = Session()
 
     try:
-        
+        query = session.query(State).filter(State.name.like('%a%')).delete()
+        session.commit()
     except Exception as e:
         print(e)
 
