@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """
-script that lists all State objects from the database hbtn_0e_6_usa
+script that prints the first State object from the database hbtn_0e_6_usa
 """
-from sys import argv
-from model_state import State, Base
+from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+from sys import argv
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -21,9 +20,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State).order_by(State.id)
+    query = session.query(State).order_by(State.id).limit(1)
 
-    for row in query:
-        print("{}: {}".format(row.id, row.name))
+    if query is None:
+        print("Nothing")
+    else:
+        for row in query:
+            print("{}: {}".format(row.id, row.name))
     Base.metadata.create_all(engine)
     session.close()
