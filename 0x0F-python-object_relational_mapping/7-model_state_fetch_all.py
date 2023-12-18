@@ -22,7 +22,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = session.query(State).order_by(State.id)
+    data = session.query(State).all()
 
     for row in data:
         print("{}: {}".format(row.id, row.name))
