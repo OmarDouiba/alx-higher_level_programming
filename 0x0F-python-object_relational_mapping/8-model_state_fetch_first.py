@@ -20,11 +20,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State).order_by(State.id).limit(1)
-
-    if query is None:
+    query = session.query(State).count()
+    if not query:
         print("Nothing")
     else:
+        query = session.query(State).order_by(State.id).limit(1)
         for row in query:
             print("{}: {}".format(row.id, row.name))
     Base.metadata.create_all(engine)
