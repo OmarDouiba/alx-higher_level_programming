@@ -23,10 +23,10 @@ if __name__ == "__main__":
     query = session.query(State, City).filter(
         State.id == City.state_id).all()
 
-    for row in query:
-        print("{}: ({}) {}".format(row[0].name,
-                                   row[1].id,
-                                   row[1].name))
+    for city, state in query:
+        print("{}: ({}) {}".format(city.name,
+                                   state.id,
+                                   state.name))
 
     session.close()
     Base.metadata.create_all(engine)
