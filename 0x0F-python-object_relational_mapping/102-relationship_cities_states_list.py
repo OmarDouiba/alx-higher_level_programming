@@ -25,4 +25,10 @@ if __name__ == "__main__":
     for city, state in query:
         print("{}: {} -> {}".format(city.id, city.name, state.name))
 
+    # OR
+    # query = session.query(State)
+    # for state in query:
+    #     for city in state.cities:
+    #         print("{}: {} -> {}".format(city.id, city.name,
+    #                                     state.name))
     session.close()
