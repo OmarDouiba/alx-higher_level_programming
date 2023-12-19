@@ -21,7 +21,7 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State, City).filter(
-        State.id == City.state_id).order_by(City.id)
+        State.id == City.state_id).all()
 
     for row in query:
         print("{}: ({}) {}".format(row[0].name,
