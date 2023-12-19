@@ -8,6 +8,7 @@ from model_state import Base
 
 
 class City(Base):
+    """Class City that inherit from base"""
     __tablename__ = "cities"
 
     id = Column(Integer, primary_key=True)
