@@ -2,7 +2,7 @@
 """
 script that prints all City objects from the database hbtn_0e_14_usa:
 """
-from sqlalchemy import create_engine, String, Integer, Column
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 from model_state import Base, State
