@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-script that lists all State objects, and corresponding
-City objects, contained in the database hbtn_0e_101_usa
+script that lists all City objects from the database hbtn_0e_101_usa
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -21,10 +20,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State)
-    for state in query:
-        print("{}: {}".format(state.id, state.name))
-        for city in state.cities:
-            print("\t{}: {}".format(city.id, city.name))
+    query = session.query(City, State).filter(City.state_id == State.id)
+
+    for city, state in query:
+        print("{}: {} -> {}".format(city.id, city.name, state.name))
 
     session.close()
