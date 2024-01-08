@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // script that prints a square
 const argv = process.argv.slice(2);
-const n = parseInt(argv[0]);
+const n = parseInt(argv[0], 10);
 
 if (!isNaN(n)) {
   for (let i = 0; i < n; i++) {
