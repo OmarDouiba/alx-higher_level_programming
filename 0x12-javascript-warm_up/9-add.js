@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//
+// script that prints the addition of 2 integers
 const argv = process.argv.slice(2);
 
 function add (a, b) {
