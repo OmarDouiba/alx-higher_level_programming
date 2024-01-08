@@ -6,5 +6,4 @@ if (!isNaN(argv)) {
   console.log("No argument");
 } else {
   console.log(argv[0]);
-
 }
