@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
     cursor.execute("""
-                   SELECT * FROM cities
+                   SELECT id, name FROM cities
                    ORDER BY id ASC;""")
 
     res = cursor.fetchall()
