@@ -1,36 +1,41 @@
 #!/usr/bin/python3
 """
-my_safe_filter_states from SQL injection.
+script that takes in arguments and displays
+all values in the states table of hbtn_0e_0_usa
+where name matches the argument. But this time, safe from SQL injections!
 """
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import MySQLdb
     from sys import argv
 
     connection = MySQLdb.connect(
-        host='localhost',
+        host="localhost",
         port=3306,
         user=argv[1],
         password=argv[2],
-        db=argv[3],
+        db=argv[3]
     )
 
-    cur = connection.cursor()
-    cur.execute("""
-                SELECT * FROM states
-                WHERE BINARY name=%(name)s
-                ORDER BY id ASC
-                """, {'name': argv[4]})
-    # OR
-    # cur.execute("""
+    query = """
+    SELECT * FROM states
+    WHERE name=%s
+    ORDER BY id ASC
+    """
+    cursor = connection.cursor()
+    cursor.execute(query, (argv[4],))
+
+    # OR you can use
+    # query = """
     # SELECT * FROM states
-    # WHERE name=%s
-    # ORDER BY id ASC
-    # """)
+    # WHERE name=%(nameIs)s
+    # """
+    # cursor = connection.cursor()
+    # cursor.execute(query, {'nameIs': argv[4]})
 
-    res = cur.fetchall()
+    res = cursor.fetchall()
+    for row in res:
+        print(row)
 
-    for state in res:
-        print(state)
-    cur.close()
+    cursor.close()
     connection.close()
