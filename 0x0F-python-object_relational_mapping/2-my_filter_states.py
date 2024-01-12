@@ -20,7 +20,7 @@ if __name__ == '__main__':
     cur = connection.cursor()
     cur.execute("""
                 SELECT * FROM states
-                WHERE BINARY name='{}'
+                WHERE BINARY name='{:}'
                 """.format(argv[4]))
 
     res = cur.fetchall()
