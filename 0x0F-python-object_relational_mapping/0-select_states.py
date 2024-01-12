@@ -14,7 +14,7 @@ if __name__ == '__main__':
         )
     cur = connection.cursor()
 
-    cur.execute(f"SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
     query = cur.fetchall()
 
     for state in query:
