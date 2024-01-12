@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #  script that lists all states from the database hbtn_0e_0_usa.
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     import MySQLdb
     from sys import argv
 
@@ -14,8 +14,9 @@ if __name__ = '__main__':
         )
     cur = connection.cursor()
 
-    cur.execute(f"SELECT * FROM states")
-    for state in cur:
+    cur.execute(f"SELECT * FROM states ORDER BY id ASC")
+    query = cur.fetchall()
+    for state in query:
         print(state)
 
     cur.close()
