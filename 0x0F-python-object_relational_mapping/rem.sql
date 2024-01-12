@@ -1,0 +1,2 @@
+DROP DATABASE hbtn_0e_4_usa;
+CREATE DATABASE IF NOT EXISTS hbtn_0e_4_usa;
