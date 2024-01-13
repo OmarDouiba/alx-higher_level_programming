@@ -10,11 +10,10 @@ from sys import argv
 
 if __name__ == "__main__":
     # # Create an MySql database engine in memory
-    engine = create_engine("""mysql+mysqldb://{}:{}@localhost:3306/{}""".format(
-        argv[1],
-        argv[2],
-        argv[3]),
-        pool_pre_ping=True)
+    engine = create_engine("""
+                           mysql+mysqldb://{}:{}@localhost:3306/{}
+                           """.format(argv[1], argv[2], argv[3]),
+                           pool_pre_ping=True)
 
     # Create a session factory using sessionmaker
     Session = sessionmaker(bind=engine)
@@ -22,7 +21,7 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State).order_by(State.id).all()
-    
+
     for state in query:
         print("{}: {}".format(state.id, state.name))
 
