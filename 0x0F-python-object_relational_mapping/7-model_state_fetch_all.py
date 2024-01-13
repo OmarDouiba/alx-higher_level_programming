@@ -24,7 +24,7 @@ if __name__ == "__main__":
     # Create a session instance(object)
     session = Session()
 
-    query = session.query(State).order_by(State.id)
+    query = session.query(State).order_by(State.id).all()
 
     for state in query:
         print("{}: {}".format(state.id, state.name))
