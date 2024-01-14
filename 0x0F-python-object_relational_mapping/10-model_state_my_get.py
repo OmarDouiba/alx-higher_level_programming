@@ -19,9 +19,10 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State
-                          ).filter(State.name == '{}'.format(argv[4])).count()
-    if query == 0:
+                          ).filter(State.name == '{}'.format(argv[4])).first()
+
+    if query is None:
         print('Not found')
     else:
-        print(query)
+        print('{}'.format(query.id))
     session.close()
