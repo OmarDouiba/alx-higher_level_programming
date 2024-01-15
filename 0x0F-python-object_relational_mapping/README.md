@@ -72,3 +72,5 @@ Indeed, all of them have the same type of syntax, but not always. Please read tu
 #### How to map a Python Class to a MySQL table
 
 #### How to create a Python Virtual Environment
+
+
