@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+# script that change the mode of files
+find . -type f ! -name "README.md" -exec chmod u+x {} \;
