@@ -2,6 +2,7 @@
 """
 script that fetches https://alx-intranet.hbtn.io/status
 """
+
 from urllib.request import urlopen
 
 
