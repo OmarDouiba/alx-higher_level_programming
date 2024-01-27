@@ -17,5 +17,5 @@ if __name__ == "__main__":
 
     with urlopen(url) as response:
         html = response.read().decode("utf-8")
-    
+
     print("Your email is: {}".format(argv[2]))
