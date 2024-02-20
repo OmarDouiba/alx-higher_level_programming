@@ -1,5 +1,6 @@
 #!/usr/bin/node
-const fs = require('fs');
+
+const fs = require("fs");
 
 const argv = process.argv.slice(2);
 
