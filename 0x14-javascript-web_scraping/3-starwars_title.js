@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const request = require('request');
+const request = require("request");
 
 const argv = process.argv.slice(2);
 
@@ -9,6 +9,7 @@ request(
     if (err) {
       return console.log(err);
     }
+
     const parseBody = JSON.parse(body);
     return console.log(parseBody.title);
   }
