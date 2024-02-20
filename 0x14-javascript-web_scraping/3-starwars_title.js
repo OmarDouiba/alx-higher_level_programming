@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const request = require("request");
+const request = require('request');
 
 const argv = process.argv.slice(2);
 
