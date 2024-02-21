@@ -8,18 +8,16 @@ request(argv[0], (err, res, body) => {
     return console.log(err);
   }
 
-  let count;
   const dic = {};
   const parseBody = JSON.parse(body);
 
-  parseBody.forEach((ele) => {
-    const id = ele.userId;
-    if (dic[id] === undefined) {
-      count = 0;
+  parseBody.forEach((task) => {
+    const userId = task.userId;
+    if (dic[userId] === undefined) {
+      dic[userId] = 0;
     }
-    if (ele.completed) {
-      count++;
-      dic[id] = count;
+    if (task.completed) {
+      dic[userId]++;
     }
   });
 
