@@ -10,12 +10,16 @@ request(argv[0], (err, res, body) => {
   const parseBody = JSON.parse(body).results;
   let count = 0;
 
-  parseBody.forEach((film) => {
-    if (
-      film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
-    ) {
-      count++;
-    }
-  });
-  return console.log(count);
+  if (parseBody && parseBody.length >= 1) {
+    parseBody.forEach((film) => {
+      if (
+        film.characters.includes(
+          'https://swapi-api.alx-tools.com/api/people/18/'
+        )
+      ) {
+        count++;
+      }
+    });
+  }
+  console.log(count);
 });
