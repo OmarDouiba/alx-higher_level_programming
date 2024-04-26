@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# script that install requests library
+sudo pip install requests
